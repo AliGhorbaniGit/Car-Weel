@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import CarClass
+from .models import CarClass,CarClassSUb
 
 
 class ChangeAdmin(admin.ModelAdmin):
@@ -8,4 +8,4 @@ class ChangeAdmin(admin.ModelAdmin):
 
 
 admin.site.register(CarClass, ChangeAdmin)
-
+admin.site.register(CarClassSUb, ChangeAdmin)

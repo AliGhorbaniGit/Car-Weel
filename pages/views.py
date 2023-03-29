@@ -5,9 +5,9 @@ from django.views import generic
 from .models import CarClass
 
 
-class MainPage(generic.ListView):
+class homepage(generic.ListView):
     model = CarClass
-    template_name = 'pages/car_show.html'
+    template_name = 'pages/home.html'
     context_object_name = 'car'
 
 
