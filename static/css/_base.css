@@ -4,21 +4,24 @@
     width: 100%;
     /*border: 2px solid gray;*/
     padding: 4px;
+    text-align: center;
+
 }
 
 #header {
     padding: 4px;
-
     height: 18%;
     width: 100%;
     /*border: 2px solid black;*/
     background: #5b80b2;
+    text-align: center;
+
 }
 
 #content {
     height: 60%;
     width: 100%;
-    border: 2px solid red;
+    /*border: 2px solid red;*/
     padding: 4px;
     margin: 5px 0px;
 }
@@ -26,8 +29,11 @@
 #footer {
     height: 18%;
     width: 100%;
-    border: 2px solid red;
+    border: 1px solid red;
     padding: 4px;
+    border-radius: 40px 40px 5px 5px;
+    box-shadow: 1px 0px 35px darkred;
+    background: #ffc300;
 
 }
 
@@ -41,13 +47,17 @@
     box-shadow: 10px 2px 20px #006b1b;
     color: wheat;
     margin: auto;
+    text-align: center;
+
 }
 
 .user_info > h2, h4 {
     display: inline-block;
 }
+
 .user_info > a {
     display: block;
+    text-decoration: none;
 }
 
 .site_info {
@@ -59,5 +69,7 @@
     border-radius: 5px 10px 10px 90px;
     box-shadow: -10px 0px 20px #006b1b;
     margin: auto;
+
+
 }
 

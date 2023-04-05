@@ -1,9 +1,21 @@
-
 {% extends '_base.html' %}
+{% load static %}
+
+
+{% block static %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock static%}
 
 {% block content %}
-    {% for item in car %}
-        <a href="{{ item.pk }}"> {{ item.title }}</a>
-        <br>
-    {% endfor %}
+
+    <div class="holder_car">
+        {% for item in car %}
+            <div>
+                <a href="{{ item.pk }}"> {{ item.title }}</a>
+                <img>
+            </div>
+
+        {% endfor %}
+    </div>
+
 {% endblock %}

@@ -1,0 +1,38 @@
+.holder_car {
+    width: 99%;
+    height: 99%;
+    /*border: 2px solid yellow;*/
+}
+
+.holder_car > div {
+    width: 23%;
+    height: 36%;
+    border: 2px solid yellow;
+    display: inline-block;
+    background: darkgreen;
+    /*color: white;*/
+    text-align: center;
+    border-radius: 15px;
+    float: left;
+    padding-top: 20px;
+
+}
+
+.holder_car > div > a:hover{
+    color: #a41515;
+    border-radius: 100px;
+}
+
+.holder_car > div > a {
+    color: white;
+    margin: auto;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+
+
+
+
