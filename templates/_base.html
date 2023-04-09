@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load i18n %}
 
 <!doctype html>
 <html lang="en">
@@ -12,8 +12,7 @@
 
     <link rel="stylesheet" href="{% static 'css/_base.css' %}">
     <title>     {% block page_title %}    {% endblock %}    </title>
-    {% block static %}  {% endblock static%}
-
+    {% block static %}  {% endblock static %}
 
 
 </head>
@@ -23,7 +22,7 @@
 <div class="holder">
 
     <div id="header">
-
+<P>{% trans 'hello welcom' %}</P>
         <div class="user_info">
 
             <img src="">

@@ -1,21 +1,23 @@
 {% extends '_base.html' %}
+{% load i18n %}
 {% load static %}
 
 
 {% block static %}
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
-{% endblock static%}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock static %}
 
 {% block content %}
+<P> {% translate 'hi ali' %}</P>
+    {% for item in car %}
+        <div class="holder_car">
 
-    <div class="holder_car">
-        {% for item in car %}
             <div>
-                <a href="{{ item.pk }}"> {{ item.title }}</a>
-                <img>
+                <a href="{{ item.pk }}"> {{ item.title }}<img src="{{ item.image.url }}"></a>
+                <p> {{ item.description | truncatewords:9 }}</p>
             </div>
+        </div>
+    {% endfor %}
 
-        {% endfor %}
-    </div>
 
 {% endblock %}
