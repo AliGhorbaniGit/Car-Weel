@@ -3,21 +3,22 @@
 {% load static %}
 
 
+
 {% block static %}
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock static %}
 
 {% block content %}
-<P> {% translate 'hi ali' %}</P>
+
     {% for item in car %}
         <div class="holder_car">
-
-            <div>
-                <a href="{{ item.pk }}"> {{ item.title }}<img src="{{ item.image.url }}"></a>
-                <p> {{ item.description | truncatewords:9 }}</p>
+            <div class="car_brand">
+                <a href="{{ item.pk }}">
+                    <h1>{{ item.title }}</h1>
+                    <img src="{{ item.image.url }}">
+                </a>
+                <p> {{ item.description | truncatewords:9|linebreaks }}</p>
             </div>
         </div>
     {% endfor %}
-
-
 {% endblock %}

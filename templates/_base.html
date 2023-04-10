@@ -13,7 +13,102 @@
     <link rel="stylesheet" href="{% static 'css/_base.css' %}">
     <title>     {% block page_title %}    {% endblock %}    </title>
     {% block static %}  {% endblock static %}
+    <style>
 
+        .holder {
+            height: auto;
+            width: 100%;
+        }
+
+        #header {
+        {#padding: 4px 0px 4px 0px;#} height: 200px;
+            # # # # # #
+            width: 100%;
+            /*border: 2px solid black;*/
+            background: red;
+            text-align: center;
+            border-radius: 20px 20px 13px 3px;
+
+        }
+
+        #content {
+            height: 60%;
+            width: 100%;
+            border: 2px solid red;
+        {#padding: 4px;#} margin: 5px 1px;
+        }
+
+        #footer {
+            height: 18%;
+            width: 100%;
+            border: 0.5px solid red;
+            padding: 4px;
+            border-radius: 40px 40px 5px 5px;
+            box-shadow: 1px 0px 35px #417690;
+            background: #ffc300;
+
+        }
+
+        .user_info:hover {
+            width: 20%;
+            transition: 2s;
+        }
+
+        .user_info {
+            transition: 3s;
+            width: 10%;
+            height: 90%;
+            float: left;
+            border-radius: 20px 10px 90px 5px;
+            box-shadow: 10px 2px 20px #006b1b;
+            color: white;
+            text-align: center;
+            background: white;
+
+        }
+
+        .user_info:hover > a {
+            background: red;
+            rotate: 360deg;
+            width: 80%;
+            transition: 1s;
+            border-radius: 35px;
+            color: white;
+        }
+
+        .user_info > a {
+            transition: 1s;
+            width: 50%;
+            font-size: 25px;
+            margin: 50px auto;
+            text-decoration: none;
+            text-align: center;
+            height: 22%;
+            padding-top: 2%;
+
+        }
+
+        .user_info > h2, h4 {
+            display: inline-block;
+            color: black;
+        }
+
+
+        .site_info {
+            width: 20%;
+            height: 90%;
+            border: 1px solid black;
+            float: right;
+            padding: 4px;
+            border-radius: 5px 10px 10px 90px;
+            box-shadow: -10px 0px 20px #006b1b;
+            margin: auto;
+            background: white;
+
+
+        }
+
+    </style>
 
 </head>
 
@@ -21,26 +116,23 @@
 
 <div class="holder">
 
-    <div id="header">
-<P>{% trans 'hello welcom' %}</P>
+    <diV id="header">
         <div class="user_info">
-
-            <img src="">
             {% if user.is_authenticated %}
-                <h4> welcome </h4>
+                <h4> {% trans 'welcome' %} </h4>
                 <h2>   {{ user.username }}</h2>
-                <a href="{% url 'account_logout' %}" target="_self"> Log Out ?</a>
+                <a href="{% url 'account_logout' %}" target="_self"> {% trans 'log out' %} </a>
             {% else %}
-                <a href="{% url 'account_login' %}"> Login ?</a>
+                <a href="{% url 'account_login' %}"> {% trans 'login ? ' %} </a>
             {% endif %}
 
         </div>
 
         <div class="site_info">
-            <img>
-            <h1> Car News 😀 </h1>
+            <img src="{% static 'img/download(5)' %}">
+            <h1>  {% trans 'Car News 😀' %} </h1>
         </div>
-    </div>
+    </diV>
 
     <div id="content">
         {% block content %}
@@ -49,7 +141,7 @@
     </div>
 
     <div id="footer">
-        <p> all right reserved </p>
+        <p> {% translate ' ALL RIGHT RESERVED ' %} </p>
         <a href="#"></a>
     </div>
 

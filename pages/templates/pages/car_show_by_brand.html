@@ -1,13 +1,24 @@
+
+
 {% extends '_base.html' %}
 {% load static %}
+{% load i18n %}
+
+
 {% block static %}
     <link rel="stylesheet" href="{% static 'css/car_sow_by_brand.css' %}">
 {% endblock static %}
 
 {% block content %}
     {% for item in car_sub %}
-        <a href="{{ item.id }}"> {{ item.title }} <img src="{{ item.image.url }}"></a>
-        <p> {{ item.description|truncatewords:40 }}</p>
-        <br>
+    <div class="holder">
+        <div class="left">
+            <a href="{{ item.id }}" class="title">{{ item.title }}  </a>
+            <a href="{{ item.id }}"> <img src="{{ item.image.url }}" class="car_image"></a>
+        </div>
+        <div class="right">
+            <p class="car_des"> {{ item.description|linebreaks}}
+        </div>
+    </div>
     {% endfor %}
-{% endblock %}
+{% endblock%}

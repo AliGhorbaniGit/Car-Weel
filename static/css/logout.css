@@ -1,0 +1,39 @@
+        .holder {
+
+            width: 50%;
+            height: 50%;
+            border: 2px solid red;
+            margin: 50px auto;
+            text-align: center;
+            padding: 10px;
+            padding-top: 50px;
+            background: #252247;
+            color: #f5dd5d;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            color: red;
+            width: 80px;
+            height: 70px;
+            transition: 2S;
+            transform: rotate(360deg);
+        }
+
+        button {
+            height: 40px;
+            width: 50px;
+            transition: 4s;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        a:hover {
+            color: greenyellow;
+            text-decoration: none;
+        }
+
+        a {
+            color: white;
+            text-decoration: #006b1b;
+        }
