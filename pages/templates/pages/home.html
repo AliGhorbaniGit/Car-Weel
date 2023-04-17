@@ -5,8 +5,8 @@
 
 
 {% block static %}
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 
 {% block content %}
 
@@ -14,8 +14,8 @@
         <div class="holder_car">
             <div class="car_brand">
                 <a href="{{ item.pk }}">
-                    <h1>{{ item.title }}</h1>
-                    <img src="{{ item.image.url }}">
+                    <h1 class="car_brand_title">{{ item.title }}</h1>
+                    <img class="car_brand_img" src="{{ item.image.url }}">
                 </a>
                 <p> {{ item.description | truncatewords:9|linebreaks }}</p>
             </div>

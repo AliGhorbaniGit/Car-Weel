@@ -145,7 +145,7 @@ USE_L10N = True
 
 LANGUAGES = (
     ('en','english'),
-    ('fa' ,'persian')
+    ('fa','persian')
 )
 
 # Static files (CSS, JavaScript, Images)

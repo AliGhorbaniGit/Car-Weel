@@ -3,7 +3,8 @@
     width: 22%;
     height: 400px;
     overflow: hidden;
-    display: inline-block;
+    /*display: inline-block;*/
+    border : 1px solid red;
 }
 
 .holder_car > .car_brand {
@@ -16,11 +17,11 @@
 
 }
 
-h1:hover {
+.car_brand_title:hover {
     color: orange;
 }
 
-h1 {
+.car_brand_title {
     width: auto;
     display: inline-block;
     height: auto;
@@ -32,12 +33,12 @@ h1 {
     border-radius: 10px;
 }
 
-div:hover > img {
+.car_brand:hover > img {
     height: 60%;
 }
 
-img {
-    width: 100%;
+.car_brand_img {
+    width: 20px;
     height: 60%;
     display: inline-block;
     border-radius: 20px;

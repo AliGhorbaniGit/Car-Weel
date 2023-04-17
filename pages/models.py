@@ -1,6 +1,6 @@
 from django.db import models
 from django.shortcuts import reverse
-
+from django.contrib.auth import get_user_model
 
 
 class CarClass(models.Model):
@@ -33,3 +33,14 @@ class Car(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Comment(models.Model):
+    author = models.ForeignKey(get_user_model(),on_delete=models.CASCADE)
+    car = models.ForeignKey(Car,on_delete=models.CASCADE, related_name='car')
+    text = models.TextField(max_length=400, verbose_name='text')
+    date_time_created = models.DateTimeField(verbose_name='date time created',auto_now_add=True)
+    date_time_modified = models.DateTimeField(verbose_name='date time modified',auto_now=True,blank=True)
+
+    def __str__(self):
+        return self.text
