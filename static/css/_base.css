@@ -107,7 +107,7 @@
 #footer {
     height: 18%;
     width: 100%;
-    border: 0.5px solid red;
+    /*border: 0.5px solid red;*/
     padding: 4px;
     border-radius: 40px 40px 5px 5px;
     box-shadow: 1px 0px 35px #417690;
@@ -152,6 +152,7 @@
     text-align: center;
     height: 22%;
     padding-top: 2%;
+    display: none;
 
 }
 
@@ -170,7 +171,7 @@
     border-radius: 5px 10px 10px 90px;
     box-shadow: -10px 0px 20px #006b1b;
     margin: auto;
-    background: red;
+    background: yellow;
 
 
 }

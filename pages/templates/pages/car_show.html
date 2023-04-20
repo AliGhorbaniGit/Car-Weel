@@ -2,6 +2,9 @@
 {% load static %}
 {% load i18n %}
 
+{% block static %}
+<link rel="stylesheet" href="{% static 'css/car_show.css' %}" >
+{% endblock %}
 {% block content %}
     <div class="holder">
         <h1>{{ car.title }}</h1>
@@ -12,7 +15,7 @@
         {% endfor %}
     </div>
 {% if user.is_authenticated %}
-  <form method="post" action="#">
+  <form method="post" >
         {% csrf_token %}
         {{ comment_form.as_p }}
         <input type="submit" title="dddd">

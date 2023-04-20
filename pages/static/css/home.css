@@ -3,8 +3,9 @@
     width: 22%;
     height: 400px;
     overflow: hidden;
-    /*display: inline-block;*/
-    border : 1px solid red;
+    display: inline-block;
+    border : 1px solid blue;
+    background: #006b1b;
 }
 
 .holder_car > .car_brand {
@@ -14,6 +15,7 @@
     border-radius: 4px;
     float: left;
     margin: 15px 20px;
+    display : inline-block;
 
 }
 

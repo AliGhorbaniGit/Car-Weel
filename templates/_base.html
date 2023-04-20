@@ -10,10 +10,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
-    <link rel="stylesheet" href="{% static "css/_base.css" %}">
+    <link rel="stylesheet" href="{% static 'css/_base.css' %}">
     <title>     {% block page_title %}    {% endblock %}    </title>
-
-<style>    {% block static %}  {% endblock static %}</style>
+    {% block static %}  {% endblock static %}
 
 
 
