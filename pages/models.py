@@ -8,11 +8,11 @@ class CarClass(models.Model):
     description = models.TextField(blank=True, verbose_name='description')
     image = models.ImageField(blank=True , upload_to='media/image')
 
+    def get_absolute_url(self):
+        return reverse('home')
+
     def __str__(self):
         return self.title
-
-    def get_absolute_url(self):
-        return reverse('show_by_class', args=[self.pk])
 
 
 class CarBrand(models.Model):
@@ -33,6 +33,9 @@ class Car(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('show_by_class',args={self.car_brand.car_brand.id})
 
 
 class Comment(models.Model):

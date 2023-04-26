@@ -3,25 +3,94 @@
 {% load i18n %}
 
 {% block static %}
-<link rel="stylesheet" href="{% static 'css/car_show.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/car_show.css' %}">
+{% endblock %}
+{% block style %}
+
+    .car_holder {
+    width: 70%;
+    height: auto;
+    margin: 8px auto;
+    padding: 8px;
+    text-align: center;
+
+    }
+
+    .car_holder:hover > .car_img{
+    width: 70%;
+    height: 60%;
+    transition: 4s ;
+    rotate: y 180deg ;
+    left:-10%;
+    }
+
+    .car_img {
+    width:50%;
+    height:35%;
+    transition: 4s;
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-bottom: 8px;
+    position:relative;
+    left:60%;
+    }
+    .car_show_des{
+    margin-bottom:150px;
+    height:auto;
+    }
+    .comment{
+    {#    border:1px solid gray;#}
+    box-shadow:1px 5px 5px orange;
+    border-radius:10px;
+    color:blue;
+    width:60%;
+    margin:15px auto ;
+    padding:4px;
+    }
+    .comment_author{
+    border-radius:0px 10px 10px 0px;
+    border:1px solid orange;
+    width:10%
+    }
+    .car_comment{
+    color:black;
+    margin:7px;
+    }
 {% endblock %}
 {% block content %}
-    <div class="holder">
-        <h1>{{ car.title }}</h1>
-        <img src="{{ car.image.url }}">
-        <p>{{ car.description|linebreaks|truncatewords:20 }}</p>
-        {% for comman in comment %}
-            <p>{{ comman.text }}</p>
-        {% endfor %}
-    </div>
+
+    {% for car in car %}
+
+        <div class="car_holder">
+        <h1 class="car_title">{{ car.title }}</h1>
+        <img class="car_img" src="{{ car.image.url }}" alt="">
+        <p class="car_show_des">{{ car.description }}</p>
+
+
+    {% endfor %}
+
+<p> comments</p>
+
 {% if user.is_authenticated %}
-  <form method="post" >
+    <form method="POST">
         {% csrf_token %}
         {{ comment_form.as_p }}
-        <input type="submit" title="dddd">
+        <button type="submit"> send</button>
     </form>
 
+{% else %}
+    <a href="{% url 'login' %}"> for comment, please log in</a>
 {% endif %}
+
+{% for comman in comment %}
+    <div class="comment">
+        <h3 class="comment_author"> {{ comman.author }}</h3>
+        <p class="car_comment">{{ comman.text }}</p>
+    </div>
+{% endfor %}
+</div>
+
 
 {% endblock %}
 

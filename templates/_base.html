@@ -10,11 +10,116 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
-    <link rel="stylesheet" href="{% static 'css/_base.css' %}">
+{#    <link rel="stylesheet" href="{% static 'css/_base.css' %}">#}
     <title>     {% block page_title %}    {% endblock %}    </title>
     {% block static %}  {% endblock static %}
 
+<style>
 
+
+.holder {
+    height: auto;
+    width: 100%;
+    padding: 4px;
+    text-align: center;
+
+}
+
+#header {
+    height: 200px;
+    width: 100%;
+    background: #4e4acf;
+    text-align: center;
+    border-radius: 20px 20px 13px 3px;
+
+}
+
+#content {
+    height:auto;
+    width: 100%;
+    {#border: 2px solid rgb(22, 203, 22);#}
+    margin: 5px 1px;
+}
+
+#footer {
+    height: 50px;
+    width: 100%;
+    /*border: 0.5px solid red;*/
+    padding: 4px;
+    border-radius: 40px 40px 5px 5px;
+    box-shadow: 1px 0px 35px #417690;
+    background: blue;
+
+}
+
+.user_info:hover {
+    height: 80%;
+    transition: 2s;
+}
+
+.user_info {
+    transition: 3s;
+    width: 10%;
+    height: 30%;
+    /*border: 1px #006b1b groove;*/
+    float: left;
+    border-radius: 20px 10px 90px 5px;
+    box-shadow: 10px 2px 20px #006b1b;
+    color: yellow;
+    text-align: center;
+    background: #6262ff;
+    overflow: hidden;
+}
+
+.user_info:hover > a {
+    background: red;
+    rotate: 360deg;
+    transition: 2s;
+    border-radius:50px;
+
+    visibility: visible;
+
+}
+
+
+.user_info > a {
+    transition: 2s;
+    width: 80%;
+    font-size: 22px;
+    margin:  auto;
+    text-decoration: none;
+    text-align: center;
+    height: 22%;
+    padding-top: 2%;
+    visibility: hidden;
+    display: block;
+    color: white;
+
+}
+
+.user_info > h2, h4 {
+    display: inline-block;
+    color: black;
+}
+
+
+.site_info {
+    width: 20%;
+    height: 90%;
+    border: 1px solid black;
+    float: right;
+    padding: 4px;
+    border-radius: 5px 10px 10px 90px;
+    box-shadow: -10px 0px 20px #006b1b;
+    margin: auto;
+    background: yellow;
+
+
+}
+{% block style %}
+
+{% endblock %}
+</style>
 
 
 </head>
@@ -36,7 +141,7 @@
         </div>
 
         <div class="site_info">
-            <img src="{% static 'img/download(5)' %}">
+            <img src="{% static 'img/download(5)' %}" alt="">
             <h1>  {% trans 'Car News 😀' %} </h1>
         </div>
     </diV>
