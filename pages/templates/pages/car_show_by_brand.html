@@ -88,8 +88,8 @@
     {% for item in car_brand %}
         <div class="car_brand_holder">
             <div class="left">
-                <a href="{{ item.get_absolute_url }}" class="title">{{ item.title }}  </a>
-                <a href="{{ item.get_absolute_url }}"> <img src="{{ item.image.url }}" class="car_image"></a>
+                <a href="{{ item.pk }}" class="title">{{ item.title }}  </a>
+                <a href="{{ item.pk }}"> <img src="{{ item.image.url }}" class="car_image"></a>
             </div>
             <div class="right">
                 <p class="car_des"> {{ item.description|linebreaks }}

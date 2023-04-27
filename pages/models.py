@@ -26,7 +26,7 @@ class CarBrand(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('pages:car_brand_subset', args={'int',self.pk})
+        return reverse('pages:car_brand_subset', args={self.pk})
 
 
 class Car(models.Model):
