@@ -2,6 +2,10 @@
 {% load static %}
 {% load i18n %}
 
+{% block page_title %}
+    {% translate "car" %}
+{% endblock %}
+
 {% block static %}
     <link rel="stylesheet" href="{% static 'css/car_show.css' %}">
 {% endblock %}
@@ -41,7 +45,7 @@
     }
     .comment{
     {#    border:1px solid gray;#}
-    box-shadow:1px 5px 5px orange;
+    box-shadow:1px 5px 5px blue;
     border-radius:10px;
     color:blue;
     width:60%;
@@ -57,39 +61,70 @@
     color:black;
     margin:7px;
     }
+    .comment_box{
+    {#    border:1px solid red;#}
+    width:3000px;
+    height:10%;
+    box-shadow:1px 5px 5px orange;
+    border-radius:10px;
+    color:blue;
+    width:60%;
+    margin:15px auto ;
+    padding:4px;
+    {#    background:black;#}
+    }
+    .text{
+    width:95%;
+    display:inline-block;
+    height:100px;
+    box-shadow:1px -5px 5px orange;
+    border:none;
+    text-align:center;
+
+    }
+    .submit{
+    width:20%;
+    height:24px;
+    background:orange;
+    border:none;
+    display:inline-block;
+    border-radius:10px;
+    margin-top:10px
+    }
 {% endblock %}
 {% block content %}
-
-    {% for car in car %}
-
-        <div class="car_holder">
+    <div class="car_holder">
         <h1 class="car_title">{{ car.title }}</h1>
         <img class="car_img" src="{{ car.image.url }}" alt="">
         <p class="car_show_des">{{ car.description }}</p>
 
 
-    {% endfor %}
+        {% if user.is_authenticated %}
+            <div class="comment_box">
+                <form method="POST">
+                    {% csrf_token %}
+                    <input class="text" type="text" name="text" placeholder={% translate "type your comment here " %}>
+                    <button class="submit" type="submit"> {% translate 'send' %}</button>
+                </form>
+            </div>
 
-<p> comments</p>
+        {% else %}
+            <a href="{% url 'login' %}"> {% translate 'for comment, please log in' %}</a>
+        {% endif %}
+        <br>
+        <br>
+        <br>
 
-{% if user.is_authenticated %}
-    <form method="POST">
-        {% csrf_token %}
-        {{ comment_form.as_p }}
-        <button type="submit"> send</button>
-    </form>
-
-{% else %}
-    <a href="{% url 'login' %}"> for comment, please log in</a>
-{% endif %}
-
-{% for comman in comment %}
-    <div class="comment">
-        <h3 class="comment_author"> {{ comman.author }}</h3>
-        <p class="car_comment">{{ comman.text }}</p>
+        <p> * {{ comment_count }} {% translate 'comments ' %} *</p>
+        {% for comman in comment %}
+            <div class="comment">
+                <h3 class="comment_author"> {{ comman.author }}</h3>
+                <p class="car_comment">{{ comman.text }}</p>
+                <span>{{ comman.date_time_created }}</span>
+{#             <span>{{ comman.date_time_modified }}</span>#}
+            </div>
+        {% endfor %}
     </div>
-{% endfor %}
-</div>
 
 
 {% endblock %}

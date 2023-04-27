@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-09 13:41+0430\n"
-"PO-Revision-Date: 2023-04-17 16:27+0330\n"
+"POT-Creation-Date: 2023-04-27 21:51+0430\n"
+"PO-Revision-Date: 2023-04-27 20:55+0330\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,6 +19,73 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\templates\pages\home.html:11
-msgid "hi ali"
-msgstr "سلام علی"
+#: .\pages\models.py:8
+msgid "car class tilte"
+msgstr "عنوان کلاس ماشین"
+
+#: .\pages\models.py:9 .\pages\models.py:22 .\pages\models.py:35
+msgid "description"
+msgstr "توضیحات"
+
+#: .\pages\models.py:10 .\pages\models.py:23 .\pages\models.py:36
+msgid "image"
+msgstr "تصویر"
+
+#: .\pages\models.py:20
+msgid "car class"
+msgstr "کلاس ماشین"
+
+#: .\pages\models.py:21
+msgid "car brand title"
+msgstr "عنوان برند ماشین"
+
+#: .\pages\models.py:33 .\pages\templates\pages\car_brand_sub.html:8
+msgid "car brand"
+msgstr "برند ماشین"
+
+#: .\pages\models.py:34
+msgid "car title"
+msgstr "عنوان ماشین"
+
+#: .\pages\models.py:46
+msgid "autor"
+msgstr "سازنده"
+
+#: .\pages\models.py:47 .\pages\templates\pages\car_show.html:6
+msgid "car"
+msgstr "ماشین"
+
+#: .\pages\models.py:48
+msgid "comment text"
+msgstr "متن کامنت"
+
+#: .\pages\models.py:49
+msgid "date time created"
+msgstr "زمان ایجاد"
+
+#: .\pages\models.py:50
+msgid "date time modified"
+msgstr "زمان ویرایش"
+
+#: .\pages\templates\pages\car_show.html:106
+msgid "type your comment here "
+msgstr "کامنت خود را اینحا وارد کنید"
+
+#: .\pages\templates\pages\car_show.html:107
+msgid "send"
+msgstr "ارسال"
+
+#: .\pages\templates\pages\car_show.html:112
+msgid "for comment, please log in"
+msgstr "برای کامنت گذاشتن و لطفا ابتدا وارد شوید"
+
+#: .\pages\templates\pages\car_show.html:118
+msgid "comments "
+msgstr "کامنت"
+
+#: .\pages\templates\pages\home.html:6
+msgid "Home"
+msgstr "خانه"
+
+#~ msgid "hi ali"
+#~ msgstr "سلام علی"

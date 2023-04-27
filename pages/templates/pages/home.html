@@ -2,6 +2,9 @@
 {% load i18n %}
 {% load static %}
 
+{% block page_title %}
+    {% translate "Home" %}
+{% endblock %}
 
 {% block static %}
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
@@ -65,7 +68,7 @@
 
     }
 
-car_class_des{
+    car_class_des{
     margin:10px;
     }
 
@@ -74,7 +77,7 @@ car_class_des{
     {% for item in car %}
         <div class="holder_car">
             <div class="car_brand">
-                <a href="{{ item.id }}">
+                <a href="{{ item.get_absolute_url }}">
                     <h1 class="car_brand_title">{{ item.title }}</h1>
                     <img class="car_brand_img" src="{{ item.image.url }}">
                 </a>
