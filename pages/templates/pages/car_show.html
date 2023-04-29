@@ -45,7 +45,7 @@
     }
     .comment{
     {#    border:1px solid gray;#}
-    box-shadow:1px 5px 5px blue;
+    box-shadow:1px 5px 5px gray;
     border-radius:10px;
     color:blue;
     width:60%;
@@ -54,7 +54,7 @@
     }
     .comment_author{
     border-radius:0px 10px 10px 0px;
-    border:1px solid orange;
+    box-shadow:-5px -5px 5px gray;
     width:10%
     }
     .car_comment{
@@ -91,6 +91,10 @@
     border-radius:10px;
     margin-top:10px
     }
+
+    .comm_time{
+    font-size:14px;
+    }
 {% endblock %}
 {% block content %}
     <div class="car_holder">
@@ -120,7 +124,7 @@
             <div class="comment">
                 <h3 class="comment_author"> {{ comman.author }}</h3>
                 <p class="car_comment">{{ comman.text }}</p>
-                <span>{{ comman.date_time_created }}</span>
+                <span class="comm_time">{{ comman.date_time_created }}</span>
 {#             <span>{{ comman.date_time_modified }}</span>#}
             </div>
         {% endfor %}

@@ -83,6 +83,13 @@
 
 {% endblock %}
 
+{% block category %}
+    <div class="link"> category :
+        {% for car in car_brand %}
+            <a href="{% url 'pages:show_by_brand' car.pk %}">{{ car.title }} </a>
+        {% endfor %}
+    </div>
+{% endblock %}
 
 {% block content %}
     {% for item in car_brand %}

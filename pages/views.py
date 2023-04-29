@@ -70,3 +70,7 @@ def car_show(request, pk, **kwargs):
 
     return render(request, 'pages/car_show.html',
                   {'comment_form': comment_form, 'car': car, 'comment': comment,'comment_count':comment_count })
+
+
+def about_us(request):
+    return render(request,'pages/about_us.html')

@@ -72,7 +72,45 @@
     margin:10px;
     }
 
+{#    .link:hover{#}
+{#    height: 80%;transition: 2s;#}
+{#    }#}
+{##}
+{#    .link:hover > a{#}
+{#    display: inline-block;#}
+{#    height: 20%;transition: 2s;#}
+{##}
+{#    }#}
+{##}
+{#    .link{#}
+{#    display: n;#}
+{#    width: 100%;#}
+{#    height: 10%;#}
+{#    border-radius: 5px 10px 10px 90px;#}
+{#    background: #417690;transition: 2s;#}
+{#    }#}
+{##}
+{#    .link > a{#}
+{#    display: none;#}
+{#    width: 20%;#}
+{#    height: 8%;#}
+{#    text-align:center;#}
+{#    text-decoration: none;#}
+{#    margin:1%;transition: 2s;#}
+{#    color:white;#}
+{#    margin-top:4px;#}
+{#    }#}
+
 {% endblock %}
+
+{% block category %}
+    <div class="link"> category :
+        {% for car in car %}
+            <a href="{% url 'pages:show_by_brand' car.pk %}">{{ car.title }} </a>
+        {% endfor %}
+    </div>
+{% endblock %}
+
 {% block content %}
     {% for item in car %}
         <div class="holder_car">
