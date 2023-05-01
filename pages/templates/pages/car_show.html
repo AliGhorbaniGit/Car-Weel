@@ -6,102 +6,26 @@
     {% translate "car" %}
 {% endblock %}
 
+
+<link rel="stylesheet" href="{% static 'css/car_show_by_brand.css' %}">
+
+
 {% block static %}
-    <link rel="stylesheet" href="{% static 'css/car_show.css' %}">
-{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/car_show_by_brand.css' %}">
+{% endblock static %}
+
+
 {% block style %}
-
-    .car_holder {
-    width: 70%;
-    height: auto;
-    margin: 8px auto;
-    padding: 8px;
-    text-align: center;
-
-    }
-
-    .car_holder:hover > .car_img{
-    width: 70%;
-    height: 60%;
-    transition: 4s ;
-    rotate: y 180deg ;
-    left:-10%;
-    }
-
-    .car_img {
-    width:50%;
-    height:35%;
-    transition: 4s;
-    text-align: center;
-    display: block;
-    margin: auto;
-    margin-bottom: 8px;
-    position:relative;
-    left:60%;
-    }
-    .car_show_des{
-    margin-bottom:150px;
-    height:auto;
-    }
-    .comment{
-    {#    border:1px solid gray;#}
-    box-shadow:1px 5px 5px gray;
-    border-radius:10px;
-    color:blue;
-    width:60%;
-    margin:15px auto ;
-    padding:4px;
-    }
-    .comment_author{
-    border-radius:0px 10px 10px 0px;
-    box-shadow:-5px -5px 5px gray;
-    width:10%
-    }
-    .car_comment{
-    color:black;
-    margin:7px;
-    }
-    .comment_box{
-    {#    border:1px solid red;#}
-    width:3000px;
-    height:10%;
-    box-shadow:1px 5px 5px orange;
-    border-radius:10px;
-    color:blue;
-    width:60%;
-    margin:15px auto ;
-    padding:4px;
-    {#    background:black;#}
-    }
-    .text{
-    width:95%;
-    display:inline-block;
-    height:100px;
-    box-shadow:1px -5px 5px orange;
-    border:none;
-    text-align:center;
-
-    }
-    .submit{
-    width:20%;
-    height:24px;
-    background:orange;
-    border:none;
-    display:inline-block;
-    border-radius:10px;
-    margin-top:10px
-    }
-
-    .comm_time{
-    font-size:14px;
-    }
+    <link rel="stylesheet" href="{% static 'css/car_show_by_brand.css' %}">
 {% endblock %}
+
+
 {% block content %}
+
     <div class="car_holder">
         <h1 class="car_title">{{ car.title }}</h1>
         <img class="car_img" src="{{ car.image.url }}" alt="">
         <p class="car_show_des">{{ car.description }}</p>
-
 
         {% if user.is_authenticated %}
             <div class="comment_box">
@@ -125,9 +49,10 @@
                 <h3 class="comment_author"> {{ comman.author }}</h3>
                 <p class="car_comment">{{ comman.text }}</p>
                 <span class="comm_time">{{ comman.date_time_created }}</span>
-{#             <span>{{ comman.date_time_modified }}</span>#}
+                {#             <span>{{ comman.date_time_modified }}</span>#}
             </div>
         {% endfor %}
+
     </div>
 
 

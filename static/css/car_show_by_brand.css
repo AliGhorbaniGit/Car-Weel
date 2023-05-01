@@ -22,7 +22,6 @@ body {
     float: left;
     height: 100%;
     transition: 2s;
-
 }
 
 .car_brand_holder > .right {
@@ -36,13 +35,11 @@ body {
     border-right: 8px solid #4e4acf;
     border-radius: 20px;
     transition: 0.5s;
-
 }
 
 .title:hover {
     background: blue;
     transition: 2s;
-
 }
 
 .car_brand_holder > .left > .title {
@@ -55,7 +52,6 @@ body {
     text-align: center;
     color: blue;
     margin-top: 10px
-
 }
 
 .car_image {

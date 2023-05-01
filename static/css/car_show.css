@@ -5,7 +5,6 @@
     margin: 8px auto;
     padding: 8px;
     text-align: center;
-
 }
 
 .car_holder:hover > .car_img {
@@ -22,8 +21,7 @@
     transition: 4s;
     text-align: center;
     display: block;
-    margin: auto;
-    margin-bottom: 8px;
+    margin: 8px auto;
     position: relative;
     left: 60%;
 }
